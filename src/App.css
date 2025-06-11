@@ -1,0 +1,148 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 183vh;
+
+  background-color: #f9f9f9; /* Background color of the whole page */
+}
+
+/* Header Styles */
+.header {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Task Container */
+.task {
+  background: white;
+  width: 100%;
+  max-width: 800px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 30px; 
+  margin-top: 20px;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* AddToDo Component */
+.addtodo {
+  display: flex;
+  gap: 15px; 
+  margin-bottom: 20px;
+}
+
+.addtodo input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.addtodo button {
+  padding: 12px 25px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.addtodo button:hover {
+  background-color: #45a049;
+}
+
+/* ToDoList Component */
+.todolist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1; /* Allows list to stretch within the container */
+  overflow-y: auto; /* Adds scrolling for long lists */
+}
+
+.todolist p {
+  text-align: center;
+  color: #777;
+}
+
+/* ToDoItem Component */
+.todoitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.todoitem:hover {
+  background-color: #f1f1f1;
+}
+
+.todoitem span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todoitem span.completed {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todoitem button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todoitem button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .addtodo button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
