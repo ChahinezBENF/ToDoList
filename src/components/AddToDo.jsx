@@ -2,25 +2,34 @@ import React, { useState } from "react";
 
 const AddToDo = ({ addTask }) => {
   const [input, setInput] = useState("");
+  const [category, setCategory] = useState("General");
 
-  const handleAdd = () => {
+ const handleAdd = () => {
     if (input.trim()) {
-      addTask(input);
+      addTask(input, category); // pass category
       setInput("");
+      setCategory("General");
     }
   };
 
-  return (
-    <div className="addtodo">
+ return (
+    <div className="addtodo"> 
       <input
         type="text"
-        placeholder="Enter a task"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        placeholder="Add a task"
       />
-      <button  onClick={handleAdd} >
-        Add
-      </button>
+      <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)} // ✅ updates category
+      >
+        <option value="General">General</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+      </select>
+      <button className="add-btn" onClick={handleAdd}>Add</button>
     </div>
   );
 };

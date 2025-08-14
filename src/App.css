@@ -14,8 +14,7 @@ body, html {
   align-items: center;
   min-height: 100vh;
   min-width: 183vh;
-
-  background-color: #f9f9f9; /* Background color of the whole page */
+  background-color: #f9f9f9;
 }
 
 /* Header Styles */
@@ -37,25 +36,26 @@ body, html {
 .task {
   background: white;
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 30px; 
+  padding: 30px;
   margin-top: 20px;
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+
 /* AddToDo Component */
 .addtodo {
   display: flex;
-  gap: 15px; 
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 .addtodo input {
-  flex: 1;
+  flex: 3; /* Wider input field */
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -63,27 +63,51 @@ body, html {
 }
 
 .addtodo button {
-  padding: 12px 25px;
-  background-color: #4caf50;
+  flex: 1;
+  padding: 12px 20px;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  background-color: #4caf50; /* Green by default */
 }
 
-.addtodo button:hover {
-  background-color: #45a049;
+/* EditToDo Component */
+.edittodo {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
 }
+
+.edittodo input {
+  flex: 6;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.edittodo button {
+  flex: 1; /* Buttons take equal smaller space */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
 
 /* ToDoList Component */
 .todolist {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  flex: 1; /* Allows list to stretch within the container */
-  overflow-y: auto; /* Adds scrolling for long lists */
+  flex: 1;
+  overflow-y: auto;
 }
 
 .todolist p {
@@ -117,17 +141,13 @@ body, html {
 }
 
 .todoitem button {
-  background-color: #e74c3c;
   color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.todoitem button:hover {
-  background-color: #c0392b;
+  margin-left: 8px;
 }
 
 /* Responsive Design */
@@ -145,4 +165,31 @@ body, html {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
+}
+
+
+/*buttons*/
+.add-btn,
+.edit-btn {
+  background-color: #4caf50; /* Green */
+}
+
+.add-btn:hover,
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Red */
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.category-select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
 }
