@@ -4,8 +4,8 @@ import EditToDo from "./EditToDo";
 const ToDoItem = ({ task, toggleComplete, deleteTask, updateTask }) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleSave = (newText) => {
-    updateTask(task.id, newText);
+const handleSave = (newText, newCategory) => {
+    updateTask(task.id, newText, newCategory);
     setIsEditing(false);
   };
 
@@ -14,6 +14,7 @@ const ToDoItem = ({ task, toggleComplete, deleteTask, updateTask }) => {
       {isEditing ? (
         <EditToDo
           currentText={task.text}
+          currentCategory={task.category}  // Pass current category
           onSave={handleSave}
           onCancel={() => setIsEditing(false)}
         />

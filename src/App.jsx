@@ -41,10 +41,10 @@ const App = () => {
   };
 
 
-  const updateTask = (id, newText) => {
+  const updateTask = (id, newText, newCategory) => {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, text: newText } : task
+        task.id === id ? { ...task, text: newText, category: newCategory } : task
       )
     );
   };
